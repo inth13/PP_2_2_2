@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Cars</title>
+    <style>
+        table {
+            border-collapse: collapse;
+            width: 400px;
+            margin: 50px auto;
+            text-align: center;
+        }
+        th, td {
+            border: 1px solid black;
+        }
+    </style>
+</head>
+<body>
+<table>
+    <thead>
+    <tr>
+        <th>model</th>
+        <th>series</th>
+        <th>color</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr th:each="car : ${cars}">
+        <td th:text="${car.getModel()}"></td>
+        <td th:text="${car.getSeries()}"></td>
+        <td th:text="${car.getColor()}"></td>
+    </tr>
+    </tbody>
+</table>
+</body>
+</html>
