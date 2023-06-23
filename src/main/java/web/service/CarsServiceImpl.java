@@ -16,7 +16,7 @@ public class CarsServiceImpl implements CarsService {
     }
 
     public List<Car> getNumbersOfCars(int count) {
-        if (count == 0 || count >= 5) {
+        if (count < 0 || count >= 5) {
             return carsDao.findAll();
         }
         return carsDao.findAll().stream().limit(count).toList();
